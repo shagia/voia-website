@@ -1,0 +1,39 @@
+.modal-root {
+	.modal-container {
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		padding: var(--common-space-lr);
+		background-color: white;
+		border: black solid 1px;
+	}
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	backdrop-filter: blur(2px);
+	background: rgba( 0, 0, 0, 0.6 );
+}
+
+
+.modal-exit{
+	.modal-exit-svg {
+	}
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	border: black solid 1px;
+	border-radius: 100%;
+	
+	width: 2rem;
+	height: 2rem;
+	
+	
+	position: absolute;
+	left: 86%;
+	top: -6%;
+	
+
+}

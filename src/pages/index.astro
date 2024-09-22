@@ -12,11 +12,10 @@ let content = {
 }
 ---
 
-
 <Layout title="Welcome to Astro.">
+	<Modal content={content} type={content.type}></Modal>
 	<div class="overlay"></div>
 	<Header></Header>
-	<Modal content={content} type={content.type} >
-		
-	</Modal>
+	
+	
 </Layout>
