@@ -2,56 +2,21 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../layouts/Header.astro';
 import Card from '../components/Card.astro';
+import Modal from '../components/Modal.astro';
+
+let content = {
+	title: "title",
+	credits: "f",
+	description: "f",
+	type: "release"
+}
 ---
 
 
 <Layout title="Welcome to Astro.">
 	<div class="overlay"></div>
 	<Header></Header>
-	<main>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
-
-<style is:global>
-	:root {
+	<Modal content={content} type={content.type} >
 		
-	}
-</style>
-<style>
-	main {
-	  margin: 0 var(--common-space-lr-large) 0 var(--common-space-lr-large);
-	}
-	
-	.overlay{
-	  position: fixed;
-	  background-image: url('../static/images/background/wipe-vector.png');
-	  background-size: cover;
-	  background-repeat: no-repeat;
-	  width: 100%;
-	  height: 100%;
-	  mix-blend-mode: difference; /* The blending isn't correct, it only visually works for now. */
-	  pointer-events: none;
-	}
-</style>
+	</Modal>
+</Layout>
