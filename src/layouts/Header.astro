@@ -1,0 +1,107 @@
+---
+import { Image } from 'astro:assets';
+
+import HeadgearLogo from '../static/images/headgear-logo.svg'
+import Youtube from '../static/images/socials/Youtube.svg'
+import Discord from '../static/images/socials/Discord.svg'
+import Instagram from '../static/images/socials/Instagram.svg'
+import Spotify from '../static/images/socials/Spotify.svg'
+import TikTok from '../static/images/socials/TikTok.svg'
+import Soundcloud from '../static/images/socials/Soundcloud.svg'
+
+---
+
+<section class="header-root">
+	<div class="header-container">
+		<div class="header-content-container">
+			<a href="/">
+				<Image class="headgear-logo" src={HeadgearLogo} alt="Voia's headgear logo" />
+			</a>
+			<h1 class="header-title">Voia</h1>
+			<div class="header-copyright">
+				© 2024 Voia. All rights reserved
+			</div>
+		</div>
+		<div class="header-links">
+			<ul>
+				<li><a href="/about">About</a></li>
+				<li><a href="/about">Music</a></li>
+				<li><a href="/about">Shows</a></li>
+				<li><a href="/about">Contact</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="header-socials">
+		<ul>
+			<li><Image class="social-icon" src={Youtube} alt="Follow on Instagram" /></li>
+			<li><Image class="social-icon" src={Discord} alt="Join Discord" /></li>
+			<li><Image class="social-icon" src={Instagram} alt="Follow on Instagram" /></li>
+			<li><Image class="social-icon" src={Spotify} alt="Follow on Spotify" /></li>
+			<li><Image class="social-icon" src={TikTok} alt="Follow on TikTok" /></li>
+			<li><Image class="social-icon" src={Soundcloud} alt="Follow on Soundcloud" /></li>
+		</ul>
+	</div>
+</section>
+<style>
+.header-root {
+  background-color: #8242DC;
+  padding: var(--common-space-lr) var(--common-space-lr) 0.5rem var(--common-space-lr);
+}
+.header-container {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  align-content: stretch;
+  border-bottom: white 3px solid;
+}
+.header-content-container {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-end;
+  align-content: stretch;
+}
+.header-title {
+  font-size: var(--text-xl);
+  font-family: sans-serif;
+  font-family: var(--header-font-one);
+  font-weight: 500;
+  line-height: 80%;
+}
+.header-copyright {
+  font-size: var(--text-xs);
+  font-family: sans-serif;
+  font-family: var(--header-font-two);
+}
+.header-content-container * {
+  padding-right: 0.4rem;
+}
+.headgear-logo {
+  background-color: transparent;
+}
+.header-links {
+  bottom: 0;
+  font-family: sans-serif;
+  font-family: var(--header-font-one);
+  font-weight: 500;
+}
+.header-links li, .header-socials li {
+  display: inline;
+}
+.header-links ul, .header-socials ul {
+  padding: 0;
+  margin: 0;
+}
+.header-socials {
+  text-align: right;
+}
+.header-socials .social-icon {
+  padding: 0.2rem;
+  max-height: 28px;
+  vertical-align: middle;
+}
+</style>
