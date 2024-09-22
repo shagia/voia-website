@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import HeadgearLogo from '../static/images/headgear-logo.svg'
 import Exit from '../static/images/ui/X.svg'
+import Cover from '../content/releases/dead-set-radio/cover.png'
 import '../styles/modal.scss'
 
 interface Props {
@@ -23,13 +24,18 @@ const { imageSrc, imageSrcAlt, content, type } = Astro.props
 				<h3 class="modal-title">
 					{content.title}
 				</h3>
+				{content.subtitle &&
+				<div class="modal-subtitle">
+					{content.subtitle}
+				</div>
+				}
 				{content.credits &&
 				<div class="modal-credits">
 					{content.credits}
 				</div>
 				}
 				<div class="modal-image">
-					<Image src={HeadgearLogo} alt="test" />
+					<Image src={Cover} alt="test" />
 				</div>
 			</div>
 			<div class="modal modal-right">
