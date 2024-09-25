@@ -1,52 +1,53 @@
 import * as React from 'react'
 import { useStore } from '@nanostores/react'
-import { isOpen, closeModal } from '../store/handleModal.js'
+import { isOpen, toggleModal, storedContent } from '../store/handleModal.js'
 
 import '../styles/modal.scss'
 import Exit from '../static/images/ui/X.svg'
 
 
-const Modal = ({ content }) => {
+const Modal = ({  }) => {
 	const openStatus = useStore(isOpen)
 	if (!openStatus) return null
+	console.log("what the modal sees state as ", storedContent.get())
 
   return (
 	<>
 	<div className="modal-root">
 		<div className="modal-container">
 			<button onClick={() => {
-				closeModal()
+				toggleModal()
 			}} className="modal-exit" id="modalExit">
 				<img className="modal-exit-svg" alt="Exit" />
 			</button>
 			<div className="modal modal-flex">
 				<div className="modal modal-left">
 					<h3 className="modal-title">
-						{content.title}
+						{storedContent.get().title}
 					</h3>
 					<div className="modal-info">
-						{content.subtitle &&
+						{storedContent.get().subtitle &&
 						<div className="modal-subtitle">
-							{content.subtitle}
+							{storedContent.get().subtitle}
 						</div>
 						}
-						{content.credits &&
+						{storedContent.get().credits &&
 						<div className="modal-credits">
-							{content.credits}
+							{storedContent.get().credits}
 						</div>
 						}
 					</div>
 					<div className="modal-image">
-						<img src={content.imageSrc} alt={content.imageSrcAlt} />
+						<img src={storedContent.get().imageSrc} alt={storedContent.get().imageSrcAlt} />
 					</div>
 				</div>
 				<div className="modal modal-right">
 					<p className="modal-description">
-						{content.description}
+						{storedContent.get().description}
 					</p>
 				</div>
 			</div>
-			{ content.type === 'release' &&
+			{ storedContent.get().type === 'release' &&
 			<div className="modal modal-links modal-flex">
 				<div className="modal-soundcloud-embed modal-left">
 					Test
