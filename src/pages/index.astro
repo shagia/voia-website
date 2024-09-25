@@ -13,13 +13,13 @@ const latestRelease = releases[0]
 ---
 
 <Layout title="Voia">
-	<Modal content={latestRelease.data} client:load> </Modal>
+	<Modal client:load> </Modal>
 	<div class="overlay"></div>
 	<Header></Header>
 	
-	<button class="model-item" aria->Test</button>
-	<button class="model-item">Test 2</button>
-	<Card client:load></Card>
+	<Card content={releases[0].data} client:load></Card>
+	<Card content={releases[1].data} client:load></Card>
+
 	
 	
 </Layout>
