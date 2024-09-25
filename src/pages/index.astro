@@ -1,22 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../layouts/Header.astro';
-import Card from '../components/Card.astro';
-import Modal from '../components/Modal.astro';
+//import Modal from '../components/Modal.astro';
+import Modal from '../components/Modal.jsx'
+import Card from '../components/Card.jsx'
 
-let content = {
-	type: "release",
-	title: "Dead Set Radio",
-	subtitle: "Original Song",
-	credits: "Vocals, Production. Writing, Mix, Master by Voia",
-	description: "The first original Voia single of 2024, released via Attack the Music. It features Chris's return to  both vocal production and guitar writing, on top of a high energy drum and bass track that evokes feelings of running parkour through a busy city.",
-}
+
+import { getCollection } from "astro:content";
+const releases = await getCollection('releases')
+const latestRelease = releases[0]
+
 ---
 
-<Layout title="Welcome to Astro.">
-	<Modal content={content} type={content.type}></Modal>
+<Layout title="Voia">
+	<Modal content={latestRelease.data} client:load> </Modal>
 	<div class="overlay"></div>
 	<Header></Header>
 	
+	<button class="model-item" aria->Test</button>
+	<button class="model-item">Test 2</button>
+	<Card client:load></Card>
+	
 	
 </Layout>
+<script defer="true">
+</script>

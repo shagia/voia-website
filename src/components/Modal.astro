@@ -5,16 +5,17 @@ import Exit from '../static/images/ui/X.svg'
 import Cover from '../content/releases/dead-set-radio/cover.png'
 import '../styles/modal.scss'
 
+// In terms of the links + soundcloud embed styling, strip the space from the top and give it a percentage based space.
+
+// Replace the fixed button links on the bottom with a prop that maps out an object that has a release's stream links
+
 interface Props {
-	imageSrc: string;
-	imageSrcAlt: string;
 	content: object;
-	type: string;
-	isHome: boolean;
 }
-const { imageSrc, imageSrcAlt, content, type } = Astro.props
+const { content } = Astro.props
 ---
-<div class="modal-root">
+<modal-element id="modalEle">
+<div class="modal-root" id="global-modal">
 	<div class="modal-container">
 		<div class="modal-exit" id="modalExit">
 			<Image class="modal-exit-svg" src={Exit} alt={"Exit"} />
@@ -24,18 +25,20 @@ const { imageSrc, imageSrcAlt, content, type } = Astro.props
 				<h3 class="modal-title">
 					{content.title}
 				</h3>
-				{content.subtitle &&
-				<div class="modal-subtitle">
-					{content.subtitle}
+				<div class="modal-info">
+					{content.subtitle &&
+					<div class="modal-subtitle">
+						{content.subtitle}
+					</div>
+					}
+					{content.credits &&
+					<div class="modal-credits">
+						{content.credits}
+					</div>
+					}
 				</div>
-				}
-				{content.credits &&
-				<div class="modal-credits">
-					{content.credits}
-				</div>
-				}
 				<div class="modal-image">
-					<Image src={Cover} alt="test" />
+					<Image height={300} width={300} src={content.imageSrc} alt={content.imageSrcAlt} />
 				</div>
 			</div>
 			<div class="modal modal-right">
@@ -44,15 +47,47 @@ const { imageSrc, imageSrcAlt, content, type } = Astro.props
 				</p>
 			</div>
 		</div>
-		{ type === 'release' &&
-		<div class="modal modal-bottom">
-			<div class="modal-soundcloud-embed">
+		{ content.type === 'release' &&
+		<div class="modal modal-links modal-flex">
+			<div class="modal-soundcloud-embed modal-left">
 				Test
 			</div>
-			<div class="modal-links">
-				Test
+			<div class="modal-right">
+				<ul class="links-container">
+					<div class="links-left">
+						<li><a href="/about">YouTube</a></li>
+						<li><a href="/about">Soundcloud</a></li>
+						<li><a href="/about">Bandcamp</a></li>
+					</div>
+					<div class="links-right">
+						<li><a href="/about">Spotify</a></li>
+						<li><a href="/about">Apple Music</a></li>
+						<li><a href="/about">Amazon Music</a></li>
+					</div>
+				</ul>
 			</div>
 		</div> }
 	</div>
-
 </div>
+</modal-element>
+
+<script defer=true>
+
+	class Modal extends HTMLElement {
+			connectedCallback() {
+				const exitButton = this.querySelector('#modalExit')
+				const modalRoot = this.querySelector('#global-modal')
+				const modalEle = document.querySelector('#modalEle')
+				exitButton.addEventListener("click", () => {
+					console.log('click!')
+					console.log(modalRoot, exitButton)
+					modalRoot.remove()
+					modalEle.remove()
+				})
+			}
+			disconnectedCallback() {
+				console.log("no longer showing modal")
+			}
+	}
+	customElements.define('modal-element', Modal)
+</script>
