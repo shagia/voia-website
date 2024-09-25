@@ -1,0 +1,14 @@
+---
+import { getCollection } from "astro:content";
+
+const releases = await getCollection('releases')
+console.log(releases)
+---
+
+<body>
+	<div>
+		{releases.map((release: any) => (
+			<h2>{release.data.title}</h2>
+		))}
+	</div>
+</body>
