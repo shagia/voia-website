@@ -5,41 +5,36 @@ import Card from "../components/Card.jsx";
 
 import { Image } from "astro:assets";
 
-import aboutImgOne from "../static/images/about/0.png";
-import aboutImgTwo from "../static/images/about/1.jpg";
-import aboutImgThree from "../static/images/about/2.jpg";
+import contactImgOne from "../static/images/contact/0.jpg";
+import contactImgTwo from "../static/images/contact/1.JPG";
 
 ---
 
 <Layout title="Voia">
 	<div class="overlay"></div>
 	<Header />
-	<main class="about">
+	<main class="">
 		<div class="home-container">
-		<h1>Contact Me</h1>
+		<h1 class="primary-header">Contact Me</h1>
 		<div class="image-container">
-			<Image src={aboutImgOne} alt="test" />
+			<Image src={contactImgOne} alt="test" />
 		</div>
 		<h2>
             I am available for work on custom music, licensing deals, vocal features, lessons, mixing and performance.
         </h2>
-		<div class="link-container">
-			<a href="mailto: voiacontact@gmail.com" class="link-button">Book Now</a>
-		</div>
 		<p>
             Outside of email, I am most active in my Discord community - where I share my process, updates, and community events when possible.
         </p>
-        <div class="link-container">
-			<a href="https://discord.com/invite/Jjjcabxq4W" class="link-button">Join My Discord</a>
-		</div>
-        <div class="image-container">
-			<Image src={aboutImgOne} alt="test" />
-		</div>
 		<p>
 			Note: prices are variable due to scope of work, time constraints and scale of the project.
         </p>
         <div class="link-container">
 			<a href="mailto: voiacontact@gmail.com" class="link-button">Email Me</a>
+			<a href="https://discord.com/invite/Jjjcabxq4W" class="link-button">Join My Discord</a>
+			<a href="mailto: voiacontact@gmail.com" class="link-button">Book Now</a>
+		</div>
+        <div class="image-container">
+			<Image src={contactImgTwo} alt="test" />
 		</div>
     </div>
 	</main>

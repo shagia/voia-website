@@ -7,9 +7,7 @@ const Modal = ({ initialContent }) => {
 	const openStatus = useStore(isOpen)
 	if (!openStatus) return null
 	// Set to see if initialContent is present. if not on the home page, nothing should be set
-	if (Object.keys(storedContent.get()).length === 0 && storedContent.get().constructor === Object) {
-		storedContent.set(initialContent)
-	}
+	
 	console.log(storedContent.get())
 	return (
 		<>

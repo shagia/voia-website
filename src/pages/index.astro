@@ -5,6 +5,7 @@ import Header from "../layouts/Header.astro";
 import Modal from "../components/Modal.jsx";
 import Card from "../components/Card.jsx";
 
+
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 const releases = await getCollection("releases");
@@ -20,7 +21,7 @@ console.log(releases);
 	<div class="overlay"></div>
 	<Header />
 	<main class="">
-		<h1>Latest News</h1>
+		<h1 class="primary-header">Latest News</h1>
 		<div class="home-container">
 			<iframe
 				width="100%"
@@ -32,37 +33,45 @@ console.log(releases);
 				referrerpolicy="strict-origin-when-cross-origin"
 				allowfullscreen></iframe>
 			<hr />
+
+			<div class="image-container">
+				<Image src={homeImgOne} alt="test" />
+			</div>
+			<div class="column-container">
+				<div class="info-container">
+					<h2>
+						I am a recording artist using music and digital art to
+						connect with my audience and tell an inter-connected
+						story.
+					</h2>
+					<p>
+						With over 20 years of experience in writing, recording
+						and performing music, I have written for leading brands,
+						played multiple international tours, and continue to
+						utilize my skills to push the boundaries of where my
+						music can go, be it around the world or in the virtual
+						space.
+					</p>
+					<p>
+						I post updates every week documenting my process,
+						sharing my work, and helping others achieve their
+						creative goals in any way I can.
+					</p>
+					<div class="link-container">
+						<a href="/contact" class="link-button">Work With Me</a>
+						<a href="/about" class="link-button">Learn More</a>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="image-container">
-			<Image src={homeImgOne} alt="test" />
-		</div>
-		<h2>
-			I am a recording artist using music and digital art to connect with
-			my audience and tell an inter-connected story.
-		</h2>
-		<p>
-			With over 20 years of experience in writing, recording and
-			performing music, I have written for leading brands, played multiple
-			international tours, and continue to utilize my skills to push the
-			boundaries of where my music can go, be it around the world or in
-			the virtual space.
-		</p>
-		<p>
-			I post updates every week documenting my process, sharing my work,
-			and helping others achieve their creative goals in any way I can.
-		</p>
-		<div class="link-container">
-			<a href="/contact" class="link-button">Work With Me</a>
-			<a href="/about" class="link-button">Learn More</a>
+		<script src="https://static.elfsight.com/platform/platform.js" async
+		></script>
+		<div
+			class="elfsight-app-9fe7a59c-5190-4572-8502-3004f951bf28"
+			data-elfsight-app-lazy
+		>
 		</div>
 	</main>
-	<script src="https://static.elfsight.com/platform/platform.js" async
-	></script>
-	<div
-		class="elfsight-app-9fe7a59c-5190-4572-8502-3004f951bf28"
-		data-elfsight-app-lazy
-	>
-	</div>
 </Layout>
 
 <script defer="true"></script>

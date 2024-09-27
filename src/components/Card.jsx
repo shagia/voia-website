@@ -14,11 +14,13 @@ const Card = ({ content }) => {
 	return (
 		<>
 			<div>
-			<button onClick={() => {
-				updateContent(content)
-				!content ? content = noContent : content
-				toggleModal()
-			}}>test</button>
+				<button onClick={() => {
+					updateContent(content)
+					!content ? content = noContent : content
+					toggleModal()
+				}}>
+					<img className='card-image-container image-container' src={content.imageSrc.src} />
+				</button>
 			</div>
 		</>
 	)

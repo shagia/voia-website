@@ -1,6 +1,6 @@
 import { atom } from "nanostores";
 
-const initialIsOpen = true
+const initialIsOpen = false
 const isOpen = atom(initialIsOpen)
 const initialContent = {}
 const storedContent = atom(initialContent)
