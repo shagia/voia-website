@@ -6,14 +6,17 @@ import Modal from '../components/Modal.jsx'
 import Card from '../components/Card.jsx'
 
 
+
 import { getCollection } from "astro:content";
 const releases = await getCollection('releases')
-const latestRelease = releases[0]
+const latestRelease = releases[0].data
+
+console.log(releases)
 
 ---
 
 <Layout title="Voia">
-	<Modal client:load> </Modal>
+	<Modal initialContent={latestRelease} client:load></Modal>
 	<div class="overlay"></div>
 	<Header></Header>
 	

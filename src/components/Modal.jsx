@@ -6,10 +6,21 @@ import '../styles/modal.scss'
 import Exit from '../static/images/ui/X.svg'
 
 
-const Modal = ({  }) => {
+
+const Modal = ({ initialContent }) => {
 	const openStatus = useStore(isOpen)
 	if (!openStatus) return null
+	console.log(storedContent.get())
+	console.log(initialContent)
+
+	// Set to see if initialContent is present. if not on the home page, nothing should be set
+	if (Object.keys(storedContent.get()).length === 0 && storedContent.get().constructor === Object ) {
+		storedContent.set(initialContent)
+	} 
+
+
 	console.log("what the modal sees state as ", storedContent.get())
+	
 
   return (
 	<>
@@ -33,12 +44,17 @@ const Modal = ({  }) => {
 						}
 						{storedContent.get().credits &&
 						<div className="modal-credits">
-							{storedContent.get().credits}
+							{storedContent.get().credits.map((credit) => {
+								return (
+								<div key={credit} className='modal-credit-key'>
+									{credit}
+								</div>)
+							})}
 						</div>
 						}
 					</div>
 					<div className="modal-image">
-						<img src={storedContent.get().imageSrc} alt={storedContent.get().imageSrcAlt} />
+						<img className='modal-image-src' src={storedContent.get().imageSrc.src} alt={storedContent.get().imageSrcAlt} />
 					</div>
 				</div>
 				<div className="modal modal-right">
@@ -47,11 +63,10 @@ const Modal = ({  }) => {
 					</p>
 				</div>
 			</div>
-			{ storedContent.get().type === 'release' &&
+			{ storedContent.get().release &&
 			<div className="modal modal-links modal-flex">
 				<div className="modal-soundcloud-embed modal-left">
-					Test
-				</div>
+				<iframe width="100%" height="106" scrolling="no" frameBorder="no" allow="autoplay" src={storedContent.get().soundcloudSrc}></iframe><div></div></div>
 				<div className="modal-right">
 					<ul className="links-container">
 						<div className="links-left">
