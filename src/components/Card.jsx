@@ -18,7 +18,6 @@ const Card = ({ content }) => {
 				updateContent(content)
 				!content ? content = noContent : content
 				toggleModal()
-				console.log("dom test", content)
 			}}>test</button>
 			</div>
 		</>

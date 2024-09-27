@@ -40,21 +40,28 @@
 	font-size: var(--text-lg);
 	font-family: var(--header-font-one);
 	font-weight: 400;
+	color: #5F96DE;
 }
 
 .modal-info {
 	padding: 0.0rem 0 0.5rem 0;
 }
-
+.modal-image-src{
+	display: block;
+	width: 90%;
+	height: 90%;
+}
 .modal-image {
-	max-width: 319px;
-	max-height: 319px;
+	position: relative;
+	display: block;
 	
 }
 
 .modal-flex{
 	.modal-left{
-		width: 80%;
+		width: 70%;
+		padding-right: var(--common-space-lr);
+
 	}
 	.modal-right{
 		width: 50%;
@@ -74,6 +81,10 @@
 	padding-top: 4rem;
 }
 
+
+.modal-soundcloud-embed {
+}
+
 .links-container {
 	.links-left {
 		
@@ -81,7 +92,9 @@
 	.links-right {
 		text-align: right;
 	}
+	height: 100%;
 	display: flex;
+	align-items: center;
 	justify-content: space-around;
 }
 
