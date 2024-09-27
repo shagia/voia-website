@@ -1,30 +1,68 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../layouts/Header.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../layouts/Header.astro";
 //import Modal from '../components/Modal.astro';
-import Modal from '../components/Modal.jsx'
-import Card from '../components/Card.jsx'
-
-
+import Modal from "../components/Modal.jsx";
+import Card from "../components/Card.jsx";
 
 import { getCollection } from "astro:content";
-const releases = await getCollection('releases')
-const latestRelease = releases[0].data
+import { Image } from "astro:assets";
+const releases = await getCollection("releases");
+const latestRelease = releases[0].data;
 
-console.log(releases)
+import homeImgOne from "../static/images/home/0.jpg";
 
+console.log(releases);
 ---
 
 <Layout title="Voia">
-	<Modal initialContent={latestRelease} client:load></Modal>
+	<Modal initialContent={latestRelease} client:load />
 	<div class="overlay"></div>
-	<Header></Header>
-	
-	<Card content={releases[0].data} client:load></Card>
-	<Card content={releases[1].data} client:load></Card>
-
-	
-	
+	<Header />
+	<main class="">
+		<h1>Latest News</h1>
+		<div class="home-container">
+			<iframe
+				width="100%"
+				height="500px"
+				src="https://www.youtube.com/embed/iBH6FmY1N78?si=FW4zZQZHXoUGJVpe"
+				title="YouTube video player"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				referrerpolicy="strict-origin-when-cross-origin"
+				allowfullscreen></iframe>
+			<hr />
+		</div>
+		<div class="image-container">
+			<Image src={homeImgOne} alt="test" />
+		</div>
+		<h2>
+			I am a recording artist using music and digital art to connect with
+			my audience and tell an inter-connected story.
+		</h2>
+		<p>
+			With over 20 years of experience in writing, recording and
+			performing music, I have written for leading brands, played multiple
+			international tours, and continue to utilize my skills to push the
+			boundaries of where my music can go, be it around the world or in
+			the virtual space.
+		</p>
+		<p>
+			I post updates every week documenting my process, sharing my work,
+			and helping others achieve their creative goals in any way I can.
+		</p>
+		<div class="link-container">
+			<a href="/contact" class="link-button">Work With Me</a>
+			<a href="/about" class="link-button">Learn More</a>
+		</div>
+	</main>
+	<script src="https://static.elfsight.com/platform/platform.js" async
+	></script>
+	<div
+		class="elfsight-app-9fe7a59c-5190-4572-8502-3004f951bf28"
+		data-elfsight-app-lazy
+	>
+	</div>
 </Layout>
-<script defer="true">
-</script>
+
+<script defer="true"></script>

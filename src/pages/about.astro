@@ -1,0 +1,60 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../layouts/Header.astro";
+import Card from "../components/Card.jsx";
+
+import { Image } from "astro:assets";
+
+import aboutImgOne from "../static/images/about/0.png";
+import aboutImgTwo from "../static/images/about/1.jpg";
+import aboutImgThree from "../static/images/about/2.jpg";
+
+---
+
+<Layout title="Voia">
+	<div class="overlay"></div>
+	<Header />
+	<main class="about">
+		<div class="home-container">
+		<div class="image-container">
+			<Image src={aboutImgOne} alt="test" />
+		</div>
+		<h2>
+			Chris Voia is a songwriter, music producer and digital creator since 2012.
+		</h2>
+		<p>
+		Voia's music draws heavy influence from science fiction, rhythm games, and dance pop to tell its own broader, interconnected story around a robot who longs to be human.
+		</p>
+        <div class="image-container">
+			<Image src={aboutImgOne} alt="test" />
+		</div>
+		<p>
+			Finding musical roots originally with Chris's background with both metal, jazz and gospel music, Voia discovered their love for electronic music from listening to trance, drum and bass, and french house around 2010, leading to their debut in composing the soundtrack for HB No.2's short film, "Dragonfly" in 2012. He would further expand into the vocal pop world by collaborating with Sidekicks in 2015's Arcangel EP, and would go on to release a single with Chris's own vocals in the 2016 singles "Eeelixir" and "Almost Human" respectively. 
+        </p>
+        <div class="image-container">
+			<Image src={aboutImgTwo} alt="test" />
+		</div>
+        <p>
+            This direction would culminate in the late 2016 concept album, Futuresong - described as "one of the best album experiences of the year" by YourEDM's Matt Meadow.</p>
+        <div class="image-container">
+			<Image src={aboutImgThree} alt="test" />
+		</div>
+        <p>
+            Voia's subsequent work would include collaborations with US and international talent and be featured on releases, games and other projects with teams from AVEX Japan, Capcom, Taito, and OMOCAT. Their new release, "Dead Set Radio" is out now on all platforms
+        </p>
+		<div class="link-container">
+			<a href="/contact" class="link-button">Work With Me</a>
+			<a href="/about" class="link-button">Learn More</a>
+		</div>
+    </div>
+	</main>
+	<script src="https://static.elfsight.com/platform/platform.js" async
+	></script>
+	<div
+		class="elfsight-app-9fe7a59c-5190-4572-8502-3004f951bf28"
+		data-elfsight-app-lazy
+	>
+	</div>
+</Layout>
+
+<script defer="true"></script>

@@ -1,0 +1,48 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../layouts/Header.astro";
+import Card from "../components/Card.jsx";
+
+import { Image } from "astro:assets";
+
+import aboutImgOne from "../static/images/about/0.png";
+import aboutImgTwo from "../static/images/about/1.jpg";
+import aboutImgThree from "../static/images/about/2.jpg";
+
+---
+
+<Layout title="Voia">
+	<div class="overlay"></div>
+	<Header />
+	<main class="about">
+		<div class="home-container">
+		<h1>Contact Me</h1>
+		<div class="image-container">
+			<Image src={aboutImgOne} alt="test" />
+		</div>
+		<h2>
+            I am available for work on custom music, licensing deals, vocal features, lessons, mixing and performance.
+        </h2>
+		<div class="link-container">
+			<a href="mailto: voiacontact@gmail.com" class="link-button">Book Now</a>
+		</div>
+		<p>
+            Outside of email, I am most active in my Discord community - where I share my process, updates, and community events when possible.
+        </p>
+        <div class="link-container">
+			<a href="https://discord.com/invite/Jjjcabxq4W" class="link-button">Join My Discord</a>
+		</div>
+        <div class="image-container">
+			<Image src={aboutImgOne} alt="test" />
+		</div>
+		<p>
+			Note: prices are variable due to scope of work, time constraints and scale of the project.
+        </p>
+        <div class="link-container">
+			<a href="mailto: voiacontact@gmail.com" class="link-button">Email Me</a>
+		</div>
+    </div>
+	</main>
+</Layout>
+
+<script defer="true"></script>
