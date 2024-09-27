@@ -12,6 +12,7 @@ const releaseCollection = defineCollection({
 		soundcloudSrc: z.string(),
 		imageSrc: image(),
 		imageSrcAlt: z.string(),
+		links: z.array(z.string()),
 	})
 });
 const characterCollection = defineCollection({ /* ... */ });
