@@ -6,10 +6,14 @@
 	/* Margin spaces */
 	--common-space-lr: 1.5rem;
 	--common-space-lr-large: 3.5rem;
+	/* Device spaces */
+	--mobile-resolution: 980px;
 	/* Fontfaces */
 	--header-font-one: "Inter";
 	--header-font-two: "Do Hyeon";
 	--body-font-one: "Do Hyeon";
+	/* Colors */
+	
 }
 
 /* button {
@@ -36,7 +40,7 @@ h1,
 h2,
 h3,
 h4 {
-	padding: 0px;
+	padding: 0.5rem 0 0.5rem 0;
 	margin: 0px;
 }
 
@@ -48,9 +52,27 @@ a {
 	color: white;
 	text-decoration: none;
 }
+// fix this class - its a fixed definition
+.about{
+	margin: var(--common-space-lr) var(--common-space-lr) 0 var(--common-space-lr);
+
+}
 
 main {
-	margin: 0 var(--common-space-lr-large) 0 var(--common-space-lr-large);
+	h1,h2,h3,h4 {}
+	hr {
+		margin-bottom: 14px;
+		width: 80%;
+		border: 1px solid rgb(0, 0, 0);
+	}
+	margin: 0 var(--common-space-lr) 0 var(--common-space-lr);
+}
+
+.image-container {
+	img {
+		width: 100%;
+		height: 100%;;
+	}
 }
 
 .overlay {
@@ -63,4 +85,30 @@ main {
 	mix-blend-mode: difference;
 	/* The blending isn't correct, it only visually works for now. */
 	pointer-events: none;
+}
+
+.link-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;;
+	padding-bottom: 20px;
+	a {
+		background-color: #E65F61;
+		width: 50%;
+		color: white;
+
+		margin: 10px;
+		padding: 20px;
+		border-radius: 5px;
+		text-align: center;
+
+		font-size: var(--text-lg);
+	}
+}
+
+.flex-container{
+	* {
+	}
+	display: flex;
+	flex-direction: column;
 }

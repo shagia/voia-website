@@ -15,6 +15,7 @@
 	height: 100%;
 	backdrop-filter: blur(2px);
 	background: rgba( 0, 0, 0, 0.6 );
+	z-index: 200;
 }
 .modal-exit{
 	.modal-exit-svg {
