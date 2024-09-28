@@ -13,7 +13,6 @@ const latestRelease = releases[0].data;
 
 import homeImgOne from "../static/images/home/0.jpg";
 
-console.log(releases);
 ---
 
 <Layout title="Voia">
@@ -34,6 +33,9 @@ console.log(releases);
 				allowfullscreen></iframe>
 			<hr />
 
+			<div class="link-container">
+				<a href="/about" class="link-button">Learn More</a>
+			</div>
 			<div class="image-container">
 				<Image src={homeImgOne} alt="test" />
 			</div>
@@ -43,7 +45,7 @@ console.log(releases);
 						I am a recording artist using music and digital art to
 						connect with my audience and tell an inter-connected
 						story.
-					</h2>
+					</h2>x
 					<p>
 						With over 20 years of experience in writing, recording
 						and performing music, I have written for leading brands,
@@ -52,15 +54,16 @@ console.log(releases);
 						music can go, be it around the world or in the virtual
 						space.
 					</p>
+						
 					<p>
 						I post updates every week documenting my process,
 						sharing my work, and helping others achieve their
 						creative goals in any way I can.
 					</p>
+
 					<div class="link-container">
 						<a href="/contact" class="link-button">Work With Me</a>
-						<a href="/about" class="link-button">Learn More</a>
-					</div>
+						</div>
 				</div>
 			</div>
 		</div>
