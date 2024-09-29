@@ -7,7 +7,7 @@ const Modal = ({ initialContent }) => {
 	const openStatus = useStore(isOpen)
 	if (!openStatus) return null
 	// Set to see if initialContent is present. if not on the home page, nothing should be set
-	
+
 	console.log(storedContent.get())
 	return (
 		<>
@@ -57,12 +57,17 @@ const Modal = ({ initialContent }) => {
 							<div className="modal-right">
 								<ul className="links-container">
 									<div className="links-left">
-										<li><a>Spotify</a></li>
-										<li><a>Bandcamp</a></li>
+										{/* 
+											The array is always formatted as:
+											0: Apple Music, 1: Bandcamp, 2: Spotify, 3: Amazon Music
+											Why not make this an object with keys, mapped? Can collections be nested?
+										*/}
+										<li><a target='_blank' href={storedContent.get().links[0]}>Apple Music</a></li>
+										<li><a target='_blank' href={storedContent.get().links[1]}>Bandcamp</a></li>
 									</div>
 									<div className="links-right">
-										<li><a>Apple Music</a></li>
-										<li><a>Amazon Music</a></li>
+										<li><a target='_blank' href={storedContent.get().links[2]}>Spotify</a></li>
+										<li><a target='_blank' href={storedContent.get().links[3]}>Amazon Music</a></li>
 									</div>
 								</ul>
 							</div>
