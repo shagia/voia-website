@@ -10,7 +10,6 @@ let noContent = "No content"
 
 
 const Card = ({ content }) => {
-	const openStatus = useStore(isOpen)
 	return (
 		<>
 			<div>
