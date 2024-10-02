@@ -65,10 +65,10 @@ a {
 main {
 	h1,h2,h3,h4 {}
 	hr {
-		margin-bottom: 15px;
-		margin-top: 15px;
 		width: 80%;
 		border: 1px solid rgb(0, 0, 0);
+		margin-top: 10px;
+		margin-bottom: 15px;
 	}
 	padding: 0 var(--common-space-lr) 4rem var(--common-space-lr);
 	max-width: 1000px;
@@ -89,8 +89,8 @@ main {
 }
 
 .primary-header {
-	padding-top: 0.5rem;
-	padding-bottom: 0em;
+	
+	padding: 1rem 0 1rem 0;
 	font-family: sans-serif;
 	font-family: var(--header-font-one);
 }
@@ -111,7 +111,6 @@ main {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	padding-bottom: 20px;
 	a {
 		background-color: #E65F61;
 		width: 50%;
