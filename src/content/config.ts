@@ -13,6 +13,7 @@ const releaseCollection = defineCollection({
 		imageSrc: image(),
 		imageSrcAlt: z.string(),
 		links: z.array(z.string()),
+		rank: z.number()
 	})
 });
 const characterCollection = defineCollection({ /* ... */ });
