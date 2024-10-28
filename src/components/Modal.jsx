@@ -11,9 +11,14 @@ const Modal = ({ initialContent }) => {
 	console.log(storedContent.get())
 	return (
 		<>
+			<div onClick={() => {
+				console.log("exit test")
+				toggleModal()
+			}} className="modal-backdrop"></div>
 			<div className="modal-root">
 				<div className="modal-container">
 					<button onClick={() => {
+						console.log("exit test")
 						toggleModal()
 					}} className="modal-exit" id="modalExit">
 						<img src={Exit.src} className="modal-exit-svg" alt="Exit" />
@@ -51,7 +56,7 @@ const Modal = ({ initialContent }) => {
 						</div>
 					</div>
 					{storedContent.get().release &&
-						<div className="modal modal-links modal-flex">
+						<div className="modal modal-links">
 							<div className="modal-soundcloud-embed modal-left">
 								<iframe width="100%" height="106" scrolling="no" frameBorder="no" allow="autoplay" src={storedContent.get().soundcloudSrc}></iframe><div></div></div>
 							<div className="modal-right">
