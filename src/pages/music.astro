@@ -7,6 +7,7 @@ import Card from "../components/Card.jsx";
 
 import { getCollection } from "astro:content";
 const releases = await getCollection("releases");
+releases.sort((a, b) => +new Date(b.data.date) - +new Date(a.data.date))
 const latestRelease = releases[0].data;
 
 ---
@@ -20,10 +21,7 @@ const latestRelease = releases[0].data;
 			<div class="">
 				<h1 class="primary-header">Original Music</h1>
 				<div class="flex-container releases">
-				{releases.filter(release => release.data.subtitle === "Original Music").map((r: any) => {
-					let reorg = r.data
-					console.log(Object.values(reorg)
-					.sort((a: any, b: any) => parseFloat(a.rank) - parseFloat(b.rank)))
+				{releases.filter((release: any) => release.data.subtitle === "Original Music").map((r: any) => {
 					return(
 					<Card content={r.data} client:load />)
 				})}
@@ -33,7 +31,7 @@ const latestRelease = releases[0].data;
 				<h1 class="primary-header">Commissioned Work</h1>
 				<div class="flex-container releases">
 					{
-						releases.filter(release => release.data.subtitle === "Commissioned Work").map((r: any) => {
+						releases.filter((release: any) => release.data.subtitle === "Commissioned Work").map((r: any) => {
 							return(
 								<div>
 									<Card content={r.data} client:load />
@@ -47,7 +45,7 @@ const latestRelease = releases[0].data;
 				<h1 class="primary-header">Covers and Compilations</h1>
 				<div class="flex-container releases">
 					{
-						releases.filter(release => release.data.subtitle === "Covers and Compilations").map((r: any) => {
+						releases.filter((release: any) => release.data.subtitle === "Covers and Compilations").map((r: any) => {
 							return(
 								<div>
 									<Card content={r.data} client:load />
@@ -61,7 +59,7 @@ const latestRelease = releases[0].data;
 				<h1 class="primary-header">Vocal Features</h1>
 				<div class="flex-container releases">
 					{
-						releases.filter(release => release.data.subtitle === "Vocal Features").map((r: any) => {
+						releases.filter((release: any) => release.data.subtitle === "Vocal Features").map((r: any) => {
 							return(
 								<div>
 									<Card content={r.data} client:load />
