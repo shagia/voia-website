@@ -2,13 +2,19 @@ import { useStore } from '@nanostores/react'
 import { isOpen, toggleModal, storedContent } from '../store/handleModal.js'
 import '../styles/modal.scss'
 import Exit from '../static/images/ui/X.svg'
+import { useEffect } from 'react'
 
 const Modal = ({ initialContent }) => {
 	const openStatus = useStore(isOpen)
 	if (!openStatus) return null
-	// Set to see if initialContent is present. if not on the home page, nothing should be set
-
-	console.log(storedContent.get())
+	const handleEscapeKey = (e) => {
+		if (e.code === 'Escape') {
+		  toggleModal()
+		  document.removeEventListener('keydown', handleEscapeKey)
+		}
+	  }
+	  document.addEventListener('keydown', handleEscapeKey)
+	
 	return (
 		<>
 			<div onClick={() => {
