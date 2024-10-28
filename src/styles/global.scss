@@ -171,10 +171,15 @@ main {
 @media screen and (max-width: 900px) {
 	.link-container {
 		.link-button {
-			width: 90%;;
+			width: 90%;
 		}
 		flex-direction: column;
 		align-items: center;
+	}
+	.releases {
+		button {
+			margin: 1rem 1rem 1rem 1rem;
+		}
 	}
 	body {
 	}

@@ -21,6 +21,9 @@ const latestRelease = releases[0].data;
 				<h1 class="primary-header">Original Music</h1>
 				<div class="flex-container releases">
 				{releases.filter(release => release.data.subtitle === "Original Music").map((r: any) => {
+					let reorg = r.data
+					console.log(Object.values(reorg)
+					.sort((a: any, b: any) => parseFloat(a.rank) - parseFloat(b.rank)))
 					return(
 					<Card content={r.data} client:load />)
 				})}
