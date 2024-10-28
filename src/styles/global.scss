@@ -2,7 +2,7 @@
 	/* Text Sizes */
 	--text-xl: 8rem;
 	--text-xs: 0.75rem;
-	--text-lg:2.3rem;
+	--text-lg: 1.8rem;
 	/* Margin spaces */
 	--common-space-lr: 1.5rem;
 	--common-space-lr-large: 3.5rem;
@@ -160,18 +160,27 @@ main {
 }
 
 @media screen and (min-width: 1577px) {
+	html {
+		font-size: 1.4rem;
+	}
 	main {
 		max-width: 1577px;
 	}
 }
 
 @media screen  and (max-width: 1577px) {
+	html {
+		font-size: 1.2rem;
+	}
 	main {
 		max-width: 1077px;
 	}
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 942px) {
+	html {
+		font-size: inherit;
+	}
 	.link-container {
 		.link-button {
 			width: 90%;
