@@ -65,7 +65,7 @@ const Modal = ({ initialContent }) => {
 										{/* 
 											The array is always formatted as:
 											0: Apple Music, 1: Bandcamp, 2: Spotify, 3: Amazon Music
-											Why not make this an object with keys, mapped? Can collections be nested?
+											TODO: Why not make this an object with keys, mapped? Can collections be nested?
 										*/}
 										<li><a target='_blank' href={storedContent.get().links[0]}>Apple Music</a></li>
 										<li><a target='_blank' href={storedContent.get().links[1]}>Bandcamp</a></li>
