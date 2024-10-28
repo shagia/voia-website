@@ -2,7 +2,7 @@
 	/* Text Sizes */
 	--text-xl: 8rem;
 	--text-xs: 0.75rem;
-	--text-lg:2.5rem;
+	--text-lg:2.3rem;
 	/* Margin spaces */
 	--common-space-lr: 1.5rem;
 	--common-space-lr-large: 3.5rem;
@@ -46,6 +46,7 @@ h3,
 h4 {
 	padding: 0.5rem 0 0.5rem 0;
 	margin: 0px;
+	color: black;
 }
 
 header {
@@ -67,6 +68,8 @@ main {
 	hr {
 		width: 80%;
 		border: 1px solid rgb(0, 0, 0);
+		color: black;
+		background-color: black;
 		margin-top: 10px;
 		margin-bottom: 15px;
 	}
@@ -117,7 +120,7 @@ main {
 		color: white;
 
 		margin: 10px;
-		padding: 20px;
+		padding: 10px;
 		border-radius: 5px;
 		text-align: center;
 
@@ -164,7 +167,7 @@ main {
 
 @media screen  and (max-width: 1577px) {
 	main {
-		max-width: 1577px;
+		max-width: 1077px;
 	}
 }
 
