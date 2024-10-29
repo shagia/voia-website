@@ -10,6 +10,40 @@ import Spotify from '../static/images/socials/Spotify.svg'
 import TikTok from '../static/images/socials/TikTok.svg'
 import Soundcloud from '../static/images/socials/Soundcloud.svg'
 
+const socialLinks = [
+  {
+    href: "https://www.youtube.com/@voia_online",
+    logo: {YouTube},
+    alt: "Follow on Youtube"
+  },
+  {
+    href: "https://discord.com/invite/Jjjcabxq4W",
+    logo: {Discord},
+    alt: "Join Discord"
+  },
+  {
+    href: "https://instagram.com/voia_online",
+    logo: {Instagram},
+    alt: "Follow on Instagram"
+  },
+  {
+    href: "https://open.spotify.com/artist/4SgHwxSnXkbmCqASAJj8Ym?si=D5ZOFsHHQqK4t1fP3IwgrQ",
+    logo: {Spotify},
+    alt: "Follow on Spotify"
+  },
+  {
+    href: "https://tiktok.com/@voia_online",
+    logo: {TikTok},
+    alt: "Follow on TikTok"
+  },
+  {
+    href: "https://soundcloud.com/voia_online",
+    logo: {Soundcloud},
+    alt: "Follow on Soundcloud"
+  },
+]
+
+
 ---
 
 <section class="header-root">
@@ -36,12 +70,14 @@ import Soundcloud from '../static/images/socials/Soundcloud.svg'
 	</div>
 	<div class="header-socials">
 		<ul>
-			<li><a href=""><Image class="social-icon" src={YouTube} alt="Follow on Instagram" /></a></li>
-			<li><a href=""><Image class="social-icon" src={Discord} alt="Join Discord" /></a></li>
-			<li><a href=""><Image class="social-icon" src={Instagram} alt="Follow on Instagram" /></a></li>
-			<li><a href=""><Image class="social-icon" src={Spotify} alt="Follow on Spotify" /></a></li>
-			<li><a href=""><Image class="social-icon" src={TikTok} alt="Follow on TikTok" /></a></li>
-			<li><a href=""><Image class="social-icon" src={Soundcloud} alt="Follow on Soundcloud" /></a></li>
+            {
+              socialLinks.map((link: any) => {
+                console.log()
+                return (
+                  <li><a target="_blank" href={link.href}><img class="social-icon" src={Object.values(link.logo)[0].src} alt={link.alt}/></a></li>
+                )
+              }
+          )}
 		</ul>
 	</div>
 </section>
