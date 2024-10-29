@@ -1,0 +1,23 @@
+{
+  "eablokker.tabsSidebar.config.collapsedFolders" : [
+
+  ],
+  "eablokker.tabsSidebar.config.customKindGroupsOrder" : [
+    "plaintext",
+    "astro",
+    "scss",
+    "javascript"
+  ],
+  "eablokker.tabsSidebar.config.customTabOrder" : [
+    "file:\/\/\/Users\/devin.sg\/Development\/voia-website-astro\/src\/content\/releases\/playing-with-fire\/playing-with-fire.mdx",
+    "file:\/\/\/Users\/devin.sg\/Development\/voia-website-astro\/src\/pages\/music.astro",
+    "file:\/\/\/Users\/devin.sg\/Development\/voia-website-astro\/src\/styles\/global.scss",
+    "file:\/\/\/Users\/devin.sg\/Development\/voia-website-astro\/src\/styles\/modal.scss",
+    "file:\/\/\/Users\/devin.sg\/Development\/voia-website-astro\/src\/layouts\/Header.astro",
+    "file:\/\/\/Users\/devin.sg\/Development\/voia-website-astro\/src\/components\/Modal.jsx",
+    "file:\/\/\/Users\/devin.sg\/Development\/voia-website-astro\/astro.config.mjs"
+  ],
+  "workspace.art_style" : 1,
+  "workspace.color" : 9,
+  "workspace.name" : "voia-website-astro"
+}
